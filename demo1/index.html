@@ -1,0 +1,739 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 plus MathML 2.0//EN"
+        "HTMLFiles/xhtml-math11-f.dtd">
+
+<!-- Created with the Wolfram Language : www.wolfram.com -->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ <title>
+  OrientDB API Demo 1 - Test API Commands
+ </title>
+ <link href="HTMLFiles/index.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body style="font-size: 100%;">
+
+<p class="Title">
+ <a id="c_1"></a>
+ OrientDB API Demo 1
+</p>
+
+
+
+<p class='Output' style='font-size: 16px;font-family: Lucida Sans Unicode;font-weight: bold;'>
+ <img src="HTMLFiles/index_1.png" alt="index_1.png" width="544" height="20" style="vertical-align:middle" />
+</p>
+
+<p class="Chapter">
+ Basic Test of API Commands
+</p>
+
+
+
+<p class="Subsubsection">
+ <a id="c_2"></a>
+ Create TOC
+</p>
+
+
+
+<p class="Section">
+ Table of Content
+</p>
+
+
+
+<p class="Item">
+ Load Packages <span class="LeaderInline">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="TOCPageInline"><span><a href="#c_3"><span class="HyperlinkInline">1</span></a></span></span>
+</p>
+
+
+
+<p class="Item">
+ <span><span><a href="#c_5"><span><span class="HyperlinkInline">Login - Logout&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2</span></span></a></span></span>
+</p>
+
+
+
+<p class="Subsubitem">
+ Logout <span class="LeaderInline">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="TOCPageInline"><span><a href="#c_5"><span class="HyperlinkInline">2</span></a></span></span>
+</p>
+
+
+
+<p class="Subsubitem">
+ Login <span class="LeaderInline">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="TOCPageInline"><span><a href="#c_6"><span class="HyperlinkInline">2</span></a></span></span>
+</p>
+
+
+
+<p class="Item">
+ Get Connections <span class="LeaderInline">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="TOCPageInline"><span><a href="#c_7"><span class="HyperlinkInline">2</span></a></span></span>
+</p>
+
+
+
+<p class="Item">
+ Get Server <span class="LeaderInline">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="TOCPageInline"><span><a href="#c_8"><span class="HyperlinkInline">3</span></a></span></span>
+</p>
+
+
+
+<p class="Item">
+ Database Operations <span class="LeaderInline">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="TOCPageInline"><span><a href="#c_9"><span class="HyperlinkInline">5</span></a></span></span>
+</p>
+
+
+
+<p class="Subsubitem">
+ Create Database <span class="LeaderInline">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="TOCPageInline"><span><a href="#c_10"><span class="HyperlinkInline">5</span></a></span></span>
+</p>
+
+
+
+<p class="Subsubitem">
+ Get Databases <span class="LeaderInline">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="TOCPageInline"><span><a href="#c_11"><span class="HyperlinkInline">6</span></a></span></span>
+</p>
+
+
+
+<p class="Subsubitem">
+ Get Single Database <span class="LeaderInline">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="TOCPageInline"><span><a href="#c_12"><span class="HyperlinkInline">6</span></a></span></span>
+</p>
+
+
+
+<p class="Subsubitem">
+ Delete Database <span class="LeaderInline">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="TOCPageInline"><span><a href="#c_13"><span class="HyperlinkInline">7</span></a></span></span>
+</p>
+
+
+
+<p class="Subsubitem">
+ Import/Export Database <span class="LeaderInline">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="TOCPageInline"><span><a href="#c_14"><span class="HyperlinkInline">7</span></a></span></span>
+</p>
+
+
+
+<p class="Item">
+ Classes Operations <span class="LeaderInline">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="TOCPageInline"><span><a href="#c_15"><span class="HyperlinkInline">7</span></a></span></span>
+</p>
+
+
+
+<p class="Subsubitem">
+ Delete a Class <span class="LeaderInline">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="TOCPageInline"><span><a href="#c_16"><span class="HyperlinkInline">7</span></a></span></span>
+</p>
+
+
+
+<p class="Subsubitem">
+ Add a Class <span class="LeaderInline">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="TOCPageInline"><span><a href="#c_17"><span class="HyperlinkInline">8</span></a></span></span>
+</p>
+
+
+
+<p class="Subsubitem">
+ Get a Class <span class="LeaderInline">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="TOCPageInline"><span><a href="#c_18"><span class="HyperlinkInline">8</span></a></span></span>
+</p>
+
+
+
+<p class="Item">
+ OrientDB OSQL Operations <span class="LeaderInline">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="TOCPageInline"><span><a href="#c_19"><span class="HyperlinkInline">8</span></a></span></span>
+</p>
+
+
+
+<p class="Subitem">
+ OrientDB - POST OSQL Command <span class="LeaderInline">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="TOCPageInline"><span><a href="#c_20"><span class="HyperlinkInline">8</span></a></span></span>
+</p>
+
+
+
+<p class="Subsubitem">
+ Make a list of OrientDB SQL Commands (OSQL) <span class="LeaderInline">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="TOCPageInline"><span><a href="#c_21"><span class="HyperlinkInline">9</span></a></span></span>
+</p>
+
+
+
+<p class="Subsubitem">
+ Execute OSQL commands one by one <span class="LeaderInline">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="TOCPageInline"><span><a href="#c_22"><span class="HyperlinkInline">9</span></a></span></span>
+</p>
+
+
+
+<p class="Subsubitem">
+ Set permanently the database and command parameters <span class="LeaderInline">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="TOCPageInline"><span><a href="#c_23"><span class="HyperlinkInline">10</span></a></span></span>
+</p>
+
+
+
+<p class="Subsubitem">
+ Get Person records <span class="LeaderInline">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="TOCPageInline"><span><a href="#c_24"><span class="HyperlinkInline">10</span></a></span></span>
+</p>
+
+
+
+<p class="Subitem">
+ OrientDB - POST OSQL Script <span class="LeaderInline">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="TOCPageInline"><span><a href="#c_25"><span class="HyperlinkInline">10</span></a></span></span>
+</p>
+
+
+
+<p class="Subsubitem">
+ Delete Database <span class="LeaderInline">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="TOCPageInline"><span><a href="#c_26"><span class="HyperlinkInline">10</span></a></span></span>
+</p>
+
+
+
+<p class="Subsubitem">
+ Create Database <span class="LeaderInline">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="TOCPageInline"><span><a href="#c_27"><span class="HyperlinkInline">11</span></a></span></span>
+</p>
+
+
+
+<p class="Subsubitem">
+ Create Classes and Properties with an OrientDB SQL script <span class="LeaderInline">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="TOCPageInline"><span><a href="#c_28"><span class="HyperlinkInline">11</span></a></span></span>
+</p>
+
+
+
+<p class="Subsubitem">
+ Populate with a few MEMBERs and an ARTICLE <span class="LeaderInline">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="TOCPageInline"><span><a href="#c_29"><span class="HyperlinkInline">12</span></a></span></span>
+</p>
+
+
+
+<p class="Subsubitem">
+ Create Edge - MEMBER isAuthorOf ARTICLE <span class="LeaderInline">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="TOCPageInline"><span><a href="#c_30"><span class="HyperlinkInline">12</span></a></span></span>
+</p>
+
+
+
+<p class="Subitem">
+ OrientDB - GET OSQL Script <span class="LeaderInline">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="TOCPageInline"><span><a href="#c_31"><span class="HyperlinkInline">13</span></a></span></span>
+</p>
+
+
+
+<p class="Subsubitem">
+ Read-Only OrientDB SQL Command <span class="LeaderInline">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="TOCPageInline"><span><a href="#c_32"><span class="HyperlinkInline">13</span></a></span></span>
+</p>
+
+
+
+<p class="Section">
+ <a id="c_3"></a>
+ Load Packages
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/index_2.png" alt="index_2.png" width="84" height="16" style="vertical-align:middle" />
+</p>
+
+<p class="Print">
+ <img src="HTMLFiles/index_3.png" alt="index_3.png" width="189" height="15" style="vertical-align:middle" />
+</p>
+
+<p class="Print">
+ <img src="HTMLFiles/index_4.png" alt="index_4.png" width="322" height="35" style="vertical-align:middle" />
+</p>
+
+<p class="Print">
+ <img src="HTMLFiles/index_5.png" alt="index_5.png" width="210" height="15" style="vertical-align:middle" />
+</p>
+
+<p class="Print">
+ <img src="HTMLFiles/index_6.png" alt="index_6.png" width="322" height="35" style="vertical-align:middle" />
+</p>
+
+<p class="Print">
+ <img src="HTMLFiles/index_7.png" alt="index_7.png" width="175" height="15" style="vertical-align:middle" />
+</p>
+
+<p class="Print">
+ <img src="HTMLFiles/index_8.png" alt="index_8.png" width="322" height="35" style="vertical-align:middle" />
+</p>
+
+<p class="Section">
+ <a id="c_4"></a>
+ Login - Logout
+</p>
+
+
+
+<p class="Subsubsection">
+ <a id="c_5"></a>
+ Logout
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/index_9.png" alt="index_9.png" width="170" height="16" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/index_10.png" alt="index_10.png" width="248" height="157" style="vertical-align:middle" />
+</p>
+
+<p class="Subsubsection">
+ <a id="c_6"></a>
+ Login
+</p>
+
+
+
+<p class="Text">
+ Default User and Password&nbsp;&nbsp;are &ldquo;admin&rdquo;, &ldquo;admin&rdquo;
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/index_11.png" alt="index_11.png" width="519" height="16" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/index_12.png" alt="index_12.png" width="53" height="16" style="vertical-align:middle" />
+</p>
+
+<p class="Section">
+ <a id="c_7"></a>
+ Get Connections
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/index_13.png" alt="index_13.png" width="745" height="16" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/index_14.png" alt="index_14.png" width="2099" height="55" style="vertical-align:middle" />
+</p>
+
+<p class="Input">
+ <img src="HTMLFiles/index_15.png" alt="index_15.png" width="660" height="16" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/index_16.png" alt="index_16.png" width="446" height="102" style="vertical-align:middle" />
+</p>
+
+<p class="Input">
+ <img src="HTMLFiles/index_17.png" alt="index_17.png" width="530" height="16" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/index_18.png" alt="index_18.png" width="53" height="16" style="vertical-align:middle" />
+</p>
+
+<p class="Input">
+ <img src="HTMLFiles/index_19.png" alt="index_19.png" width="463" height="117" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/index_20.png" alt="index_20.png" width="446" height="78" style="vertical-align:middle" />
+</p>
+
+<p class="Section">
+ <a id="c_8"></a>
+ Get Server
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/index_21.png" alt="index_21.png" width="619" height="16" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/index_22.png" alt="index_22.png" width="1017" height="149" style="vertical-align:middle" />
+</p>
+
+<p class="Input">
+ <img src="HTMLFiles/index_23.png" alt="index_23.png" width="224" height="16" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/index_24.png" alt="index_24.png" width="1843" height="468" style="vertical-align:middle" />
+</p>
+
+<p class="Input">
+ <img src="HTMLFiles/index_25.png" alt="index_25.png" width="177" height="16" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/index_26.png" alt="index_26.png" width="175" height="174" style="vertical-align:middle" />
+</p>
+
+<p class="Input">
+ <img src="HTMLFiles/index_27.png" alt="index_27.png" width="184" height="16" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/index_28.png" alt="index_28.png" width="1925" height="154" style="vertical-align:middle" />
+</p>
+
+<p class="Section">
+ <a id="c_9"></a>
+ Database Operations
+</p>
+
+
+
+<p class="Subsubsection">
+ <a id="c_10"></a>
+ Create Database
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/index_29.png" alt="index_29.png" width="236" height="117" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/index_30.png" alt="index_30.png" width="792" height="172" style="vertical-align:middle" />
+</p>
+
+<p class="Subsubsection">
+ <a id="c_11"></a>
+ Get Databases
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/index_31.png" alt="index_31.png" width="346" height="16" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/index_32.png" alt="index_32.png" width="353" height="124" style="vertical-align:middle" />
+</p>
+
+<p class="Subsubsection">
+ <a id="c_12"></a>
+ Get Single Database
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/index_33.png" alt="index_33.png" width="452" height="16" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/index_34.png" alt="index_34.png" width="1204" height="220" style="vertical-align:middle" />
+</p>
+
+<p class="Subsubsection">
+ <a id="c_13"></a>
+ Delete Database
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/index_35.png" alt="index_35.png" width="168" height="97" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/index_36.png" alt="index_36.png" width="53" height="16" style="vertical-align:middle" />
+</p>
+
+<p class="Subsubsection">
+ <a id="c_14"></a>
+ Import/Export Database
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/index_37.png" alt="index_37.png" width="494" height="16" style="vertical-align:middle" />
+</p>
+
+<p class="Input">
+ <img src="HTMLFiles/index_38.png" alt="index_38.png" width="360" height="16" style="vertical-align:middle" />
+</p>
+
+<p class="Section">
+ <a id="c_15"></a>
+ Classes Operations
+</p>
+
+
+
+<p class="Subsubsection">
+ <a id="c_16"></a>
+ Delete a Class
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/index_39.png" alt="index_39.png" width="574" height="16" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/index_40.png" alt="index_40.png" width="196" height="78" style="vertical-align:middle" />
+</p>
+
+<p class="Subsubsection">
+ <a id="c_17"></a>
+ Add a Class
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/index_41.png" alt="index_41.png" width="570" height="16" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/index_42.png" alt="index_42.png" width="196" height="78" style="vertical-align:middle" />
+</p>
+
+<p class="Subsubsection">
+ <a id="c_18"></a>
+ Get a Class
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/index_43.png" alt="index_43.png" width="573" height="16" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/index_44.png" alt="index_44.png" width="211" height="268" style="vertical-align:middle" />
+</p>
+
+<p class="Section">
+ <a id="c_19"></a>
+ OrientDB OSQL Operations
+</p>
+
+
+
+<p class="Subsection">
+ <a id="c_20"></a>
+ OrientDB - POST OSQL Command
+</p>
+
+
+
+<p class="Subsubsection">
+ <a id="c_21"></a>
+ Make a list of OrientDB SQL Commands (OSQL)
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/index_45.png" alt="index_45.png" width="666" height="197" style="vertical-align:middle" />
+</p>
+
+<p class="Subsubsection">
+ <a id="c_22"></a>
+ Execute OSQL commands one by one
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/index_46.png" alt="index_46.png" width="618" height="16" style="vertical-align:middle" />
+</p>
+
+<p class="Input">
+ <img src="HTMLFiles/index_47.png" alt="index_47.png" width="150" height="16" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/index_48.png" alt="index_48.png" width="860" height="268" style="vertical-align:middle" />
+</p>
+
+<p class="Subsubsection">
+ <a id="c_23"></a>
+ Set permanently the database and command parameters
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/index_49.png" alt="index_49.png" width="450" height="16" style="vertical-align:middle" />
+</p>
+
+<p class="Subsubsection">
+ <a id="c_24"></a>
+ Get Person records
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/index_50.png" alt="index_50.png" width="394" height="16" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/index_51.png" alt="index_51.png" width="1018" height="102" style="vertical-align:middle" />
+</p>
+
+<p class="Subsection">
+ <a id="c_25"></a>
+ OrientDB - POST OSQL Script
+</p>
+
+
+
+<p class="Subsubsection">
+ <a id="c_26"></a>
+ Delete Database
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/index_52.png" alt="index_52.png" width="591" height="16" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/index_53.png" alt="index_53.png" width="53" height="16" style="vertical-align:middle" />
+</p>
+
+<p class="Subsubsection">
+ <a id="c_27"></a>
+ Create Database
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/index_54.png" alt="index_54.png" width="802" height="37" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/index_55.png" alt="index_55.png" width="792" height="172" style="vertical-align:middle" />
+</p>
+
+<p class="Subsubsection">
+ <a id="c_28"></a>
+ Create Classes and Properties with an OrientDB SQL script
+</p>
+
+
+
+<p class="Text">
+ <span style='font-weight: bold;'>Make an OSQL Batch Script to Create the Graph Database</span>
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/index_56.png" alt="index_56.png" width="348" height="317" style="vertical-align:middle" />
+</p>
+
+<p class="Text">
+ <span style='font-weight: bold;'>Execute OSQL Script on MemberArticleDB</span>
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/index_57.png" alt="index_57.png" width="739" height="16" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/index_58.png" alt="index_58.png" width="196" height="78" style="vertical-align:middle" />
+</p>
+
+<p class="Subsubsection">
+ <a id="c_29"></a>
+ Populate with a few MEMBERs and an ARTICLE
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/index_59.png" alt="index_59.png" width="816" height="117" style="vertical-align:middle" />
+</p>
+
+<p class="Input">
+ <img src="HTMLFiles/index_60.png" alt="index_60.png" width="755" height="16" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/index_61.png" alt="index_61.png" width="614" height="78" style="vertical-align:middle" />
+</p>
+
+<p class="Subsubsection">
+ <a id="c_30"></a>
+ Create Edge - MEMBER isAuthorOf ARTICLE
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/index_62.png" alt="index_62.png" width="547" height="117" style="vertical-align:middle" />
+</p>
+
+<p class="Input">
+ <img src="HTMLFiles/index_63.png" alt="index_63.png" width="755" height="16" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/index_64.png" alt="index_64.png" width="501" height="78" style="vertical-align:middle" />
+</p>
+
+<p class="Subsection">
+ <a id="c_31"></a>
+ OrientDB - GET OSQL Script
+</p>
+
+
+
+<p class="Subsubsection">
+ <a id="c_32"></a>
+ Read-Only OrientDB SQL Command
+</p>
+
+
+
+<p class="Text">
+ <span style='font-weight: bold;'>These are idempotent commands like SQL SELECT and TRAVERSE</span>
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/index_65.png" alt="index_65.png" width="360" height="97" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/index_66.png" alt="index_66.png" width="876" height="198" style="vertical-align:middle" />
+</p>
+
+<p class="Input">
+ <img src="HTMLFiles/index_67.png" alt="index_67.png" width="368" height="97" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/index_68.png" alt="index_68.png" width="812" height="78" style="vertical-align:middle" />
+</p>
+
+
+
+
+<div style="font-family:Helvetica; font-size:11px; width:100%; border:1px none #999999; border-top-style:solid; padding-top:2px; margin-top:20px;">
+ <a href="http://www.wolfram.com/language/" style="color:#000; text-decoration:none;">
+  <span style="color:#555555">Created with the Wolfram Language</span> 
+ </a>
+</div>
+</body>
+
+</html>
